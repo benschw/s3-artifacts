@@ -2,11 +2,11 @@
 //document.write(window.location.search);
 
 function getSpace(s,l){
-var ret = "";
-while(s.length+ret.length<l){
-  ret = ret + " ";
-}
-return ret;
+	var ret = "";
+	while(s.length+ret.length<l){
+		ret = ret + " ";
+	}
+	return ret;
 }
 
 
@@ -76,36 +76,36 @@ function handleList(){
 			the XMLHttpRequest object. */
 		var response = http.responseXML;
 
-filex = response.getElementsByTagName('Contents');
+		filex = response.getElementsByTagName('Contents');
 
 
-res = '';
-fileList = new Array();
-for(i=0; i<filex.length; i++){
-        fileData =new Array();
-        fileList[i] = fileData;
-	size = filex[i].getElementsByTagName('Size')[0].firstChild.data;
-	name = filex[i].getElementsByTagName('Key')[0].firstChild.data;
-	lastmod = filex[i].getElementsByTagName('LastModified')[0].firstChild.data;
-        link = "<A HREF=\""+name+"\">"+name+"</A>";
-        fileData[0] = name;
-        fileData[1] = size;
-        fileData[2] = lastmod;
-        fileData[3] = link;
-}
-fileList.sort(getSort());
-//document.write(getSort());
-for(i=0; i<fileList.length; i++){ //length is the same as count($array)
-        fileData = fileList[i];
-        name = fileData[0];
-        size = fileData[1];
-        lastmod = fileData[2];
-        link = fileData[3];
-        res = res +  getSpace(size,15) +size + " B ";
-        res = res + " "+ getSpace(lastmod,20)+ lastmod + " ";
-        res = res + " "+ link+ getSpace(name,50) + " ";
-        res = res + "<BR>";
-}
+		res = '';
+		fileList = new Array();
+		for(i=0; i<filex.length; i++){
+			fileData =new Array();
+			fileList[i] = fileData;
+			size = filex[i].getElementsByTagName('Size')[0].firstChild.data;
+			name = filex[i].getElementsByTagName('Key')[0].firstChild.data;
+			lastmod = filex[i].getElementsByTagName('LastModified')[0].firstChild.data;
+			link = "<A HREF=\""+name+"\">"+name+"</A>";
+			fileData[0] = name;
+			fileData[1] = size;
+			fileData[2] = lastmod;
+			fileData[3] = link;
+		}
+		fileList.sort(getSort());
+		//document.write(getSort());
+		for(i=0; i<fileList.length; i++){ //length is the same as count($array)
+			fileData = fileList[i];
+			name = fileData[0];
+			size = fileData[1];
+			lastmod = fileData[2];
+			link = fileData[3];
+			res = res +  getSpace(size,15) +size + " B ";
+			res = res + " "+ getSpace(lastmod,20)+ lastmod + " ";
+			res = res + " "+ link+ getSpace(name,50) + " ";
+			res = res + "<BR>";
+		}
 
 
 		document.getElementById('bucket_list').innerHTML = "<PRE>"+getLink()+"<BR>"+res+"</PRE>"  ;
@@ -114,67 +114,68 @@ for(i=0; i<fileList.length; i++){ //length is the same as count($array)
 
 
 function getQueryVariable(variable) {
-var query = window.location.search.substring(1);
-var vars = query.split("&");
-for (var i=0;i<vars.length;i++) {
-var pair = vars[i].split("=");
-if (pair[0] == variable) {
-return pair[1];
-}
-}
-return null;
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if (pair[0] == variable) {
+			return pair[1];
+		}
+	}
+	return null;
 }
 
 
 function sortSize(a,b) {
-   if(parseInt(a[1]) > parseInt(b[1])) return 1;
-   if(parseInt(a[1]) < parseInt(b[1])) return -1;
-   return 0;
- }
+	if(parseInt(a[1]) > parseInt(b[1])) return 1;
+	if(parseInt(a[1]) < parseInt(b[1])) return -1;
+	return 0;
+}
 function sortSizeDesc(a,b) { return (-sortSize(a,b)); }
+
 function sortLastmod(a,b) {
-   if(a[2] > b[2]) return 1;
-   if(a[2] < b[2]) return -1;
-   return 0;
+	if(a[2] > b[2]) return 1;
+	if(a[2] < b[2]) return -1;
+	return 0;
 }
 function sortLastmodDesc(a,b) { return (-sortLastmod(a,b)); }
 
 function sortName(a,b) {
-   if(a[0] > b[0]) return 1;
-   if(a[0] < b[0]) return -1;
-   return 0;
+	if(a[0] > b[0]) return 1;
+	if(a[0] < b[0]) return -1;
+	return 0;
 }
 function sortNameDesc(a,b) { return -sortName(a,b); }
 //document.write('http://'+location.hostname);
 
 function getSort(){
-  var s = getQueryVariable("sort");
-  var d = getQueryVariable("sortdir");
-  if(s=='size'){ return d == 'desc' ? sortSizeDesc : sortSize};
-  if(s=='name'){ return d == 'desc' ? sortNameDesc : sortName};
-  if(s=='lastmod'){ return d == 'desc' ? sortLastmodDesc : sortLastmod};
-  return sortName;
+	var s = getQueryVariable("sort");
+	var d = getQueryVariable("sortdir");
+	if(s=='size'){ return d == 'desc' ? sortSizeDesc : sortSize};
+	if(s=='name'){ return d == 'desc' ? sortNameDesc : sortName};
+	if(s=='lastmod'){ return d == 'desc' ? sortLastmodDesc : sortLastmod};
+	return sortName;
 }
 
 
 function getLink(){
-  return "             "+getLinkSize() + "  " + getLinkLastmod() + "              " + getLinkName() + "   " ;
+	return "             "+getLinkSize() + "  " + getLinkLastmod() + "              " + getLinkName() + "   " ;
 }
 
 function getNextSortDir(sortCol){
-  if (sortCol == getQueryVariable("sort"))
-      return getQueryVariable("sortdir") == 'desc' ? 'asc' : 'desc';
-  return 'asc'
+	if (sortCol == getQueryVariable("sort"))
+		return getQueryVariable("sortdir") == 'desc' ? 'asc' : 'desc';
+	return 'asc'
 }
 
 function getLinkSize(){
-  return "<A HREF=\"?sort=size&sortdir=" +getNextSortDir('size') +"\">Size</A>";
+	return "<A HREF=\"?sort=size&sortdir=" +getNextSortDir('size') +"\">Size</A>";
 }
 function getLinkName(){
-  return "<A HREF=\"?sort=name&sortdir=" +getNextSortDir('name') +"\">Name</A>";
+	return "<A HREF=\"?sort=name&sortdir=" +getNextSortDir('name') +"\">Name</A>";
 }
 function getLinkLastmod(){
-  return "<A HREF=\"?sort=lastmod&sortdir=" +getNextSortDir('lastmod') +"\">Lastmodified</A>";
+	return "<A HREF=\"?sort=lastmod&sortdir=" +getNextSortDir('lastmod') +"\">Lastmodified</A>";
 }
 
 
