@@ -1,0 +1,16 @@
+sudo: false
+
+services:
+  - rabbitmq
+
+env:
+  - AWS_ACCESS_KEY_ID='AKIAJWN36CZNBCQXFFTQ'
+  - secure: "WxdJ+IzE6pAzgDPPl91W2UO1ZttP7z6a5hTHLbGHB3DbSqdL0kOknrEitTqtNnrnEfzqu7BbmJUUPgxBkq02RgcQ0hA9s/f2SMJkBPOkAkzlEveyjW7cq3HYdjkqIX0CDcoy/L+6/qjKbh2vTlS8XNCdqBnEQR26EmIkV8kYytfN9+gnkERKJX6yLL6jporoR/NGwd5Xhc+d7+Rqac2dZFETtZWUsB1de+eeRmCIGl/5o29PkHY1LPou2CO9BrHFbT0brzsbgs4B4rzPPOsEqjsHb23mpS6jnByHMxoZ11B180i0sEAtqquPsfa9NHThfcAkrF7dbNbcGT0M385kKywNeUPWKN+Y70U9wURlyZv022vrhGPXEh8/vqHdtUW+aDBK3jeJnHiq25LMuCvbgWxnPbSHijFAt3ALTk4JipqFS9gqtYxdsaSvuYWzD2L0wrM3tLeiLyc/6c0mFk/SKYkBgyTSuDEkeYEZaLrLOVm6u49SLFCF1KIH07qi/M4jrBDQE6S7X4XcFT97gpwn2dQxd+GGCbdEw1wvhgnaH7V5eK8G4EdpkoKT5Pr51vBhWSBn2FTgNDJ7WWRqTgRTjdLnp7hfINGYpHGqgLPatnBU6u63Dzmih92hU7kJYJ6PYpk5dp2TAv993zB+wQ1O87NW8mWT2dCywtxj3V/Now0="
+ 
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+
+script:
+  - make build publish
