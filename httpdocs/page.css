@@ -9,7 +9,7 @@ body {
   margin-bottom: 60px;
 }
 
-nav img, footer img {
+nav img, .footer img {
 	width: 30px;
 	height: 30px;
 }
