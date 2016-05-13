@@ -1,0 +1,6 @@
+{
+	"driver": "fliglio",
+	"name": "s3-artifacts",
+	"db": "f",
+	"health": "/index.html"
+}
