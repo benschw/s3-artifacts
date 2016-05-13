@@ -1,15 +1,25 @@
-html, body { height: 100%; width: 100%; margin: 0; }
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-html {
-  position: relative;
-  min-height: 100%;
+html, body { 
+	height: 100%; width: 100%; margin: 0; 
 }
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+a, a:hover, a:visited, a:active {
+	color: #45a2bc;
 }
 
-nav img, .footer img {
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.svg-icon{
 	width: 30px;
 	height: 30px;
 }
@@ -19,3 +29,8 @@ nav img, .footer img {
 	padding: 15px;
 }
 
+
+.navbar-default {
+	background-color: #ffffff;
+	border: 0px;
+}
