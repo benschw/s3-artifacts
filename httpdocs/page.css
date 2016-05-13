@@ -1,0 +1,21 @@
+html, body { height: 100%; width: 100%; margin: 0; }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+nav img, footer img {
+	width: 30px;
+	height: 30px;
+}
+
+.footer {
+	height: 60px;
+	padding: 15px;
+}
+
