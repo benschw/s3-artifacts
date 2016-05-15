@@ -21,15 +21,16 @@ angular.module('s3art', [
 		templateUrl: '/main.tpl.html',
 		controller: 'HomeCtrl'
 	};
-	var about = {
+	var project = {
 		name: 'about',
-		url: '/about',
-		template: "<h2>Hello World</h2>"
+		url: '/:project',
+		templateUrl: '/project.tpl.html',
+		controller: 'ProjectCtrl'
 	};
 
 	$stateProvider
 		.state(home)
-		.state(about);
+		.state(project);
 }])
 .run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state,   $stateParams) {
 	$rootScope.$state       = $state;
@@ -73,14 +74,32 @@ angular.module('s3art', [
 	};
 }])
 
-.controller('HomeCtrl', ['$scope', '$http', 'bucketSvc', function ($scope, $http, bucketSvc) {
-	$scope['awesomeThings'] = ['AngularJS', 'Angular-Ui-Router', 'Bootstrap', 'Closure'];
+.controller('HomeCtrl', ['$scope', 'bucketSvc', function ($scope, bucketSvc) {
 
+	bucketSvc.getAll().then(function(data) {
+		var keys = [];
+		for (var i=0; i<data.data.length; i++) {
+			if (data.data[i].key.substring(0, 9) == 'artifacts') {
+				var parts = data.data[i].key.split('/');
+				keys.push(parts[1]);
+			}
+		}
+		$scope.keys = $.unique(keys);
+		console.log($scope.keys);
+	});
+
+}])
+
+.controller('ProjectCtrl', ['$scope', '$stateParams', 'bucketSvc', function ($scope, $stateParams, bucketSvc) {
+	$scope.project = $stateParams.project;
 	bucketSvc.getAll().then(function(data) {
 		var files = [];
 		for (var i=0; i<data.data.length; i++) {
 			if (data.data[i].key.substring(0, 9) == 'artifacts') {
-				files.push(data.data[i]);
+				var parts = data.data[i].key.split('/');
+				if (parts[1] == $scope.project) {
+					files.push(data.data[i]);
+				}
 			}
 		}
 		$scope.files = files

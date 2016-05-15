@@ -1,16 +1,5 @@
-<table class="table table-striped">
-	<thead> 
-		<tr>
-			<th>Filesize</th>
-			<th>Last Modified</th>
-			<th>Download</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="file in files">
-			<td>{{file.size}} B</td>
-			<td>{{file.lastModified}}</td>
-			<td><a href="{{file.url}}">{{file.key}}</a></td>
-		<tr>
-	</tbody
-</table>
+<ul>
+	<li ng-repeat="k in keys">
+		<a href="/#/{{k}}">{{k}}</a>
+	</li>
+</ul>
