@@ -60,6 +60,11 @@ angular.module('s3art', [
 							'size': $(nodes[i]).find('Size')[0].firstChild.data,
 						});
 					}
+
+					files.sort(function(a,b) {
+						return (a.key > b.key) ? 1 : ((b.key > a.key) ? -1 : 0);
+					});
+
 					return files;
 				}
 			});
