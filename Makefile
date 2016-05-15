@@ -15,4 +15,4 @@ run: stop
 	chromium-browser http://s3-artifacts.horde/
 
 stop:
-	horde stop
+	horde stop || true

@@ -12,7 +12,7 @@
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/page.css" media="screen">
 	</head>
-	<body onLoad="getList();">
+	<body ng-app="s3art">
 
 		<div class="navbar navbar-default">
 			<div class="container">
@@ -29,10 +29,7 @@
 
 		<div class="container">
 			<div class="row-fluid">
-				<div class="col-md-12">
-					<div id="bucket_list">
-						<!--This is where we'll be displaying the products once they're loaded-->
-					</div>
+				<div class="col-md-12" ui-view>
 				</div>
 			</div>
 		</div>
@@ -42,8 +39,11 @@
 				<a href="mailto:benschw@gmail.com">benschw@gmail.com</a>
 			</div>
 		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.1/ui-bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.1/ui-bootstrap-tpls.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-sanitize.min.js"></script>
