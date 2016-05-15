@@ -18,7 +18,7 @@ angular.module('s3art', [
 	var home = {
 		name: 'home',
 		url: '/',
-		templateUrl: '/views/main.tpl.html',
+		templateUrl: '/main.tpl.html',
 		controller: 'HomeCtrl'
 	};
 	var about = {
