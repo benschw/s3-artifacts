@@ -11,12 +11,7 @@ angular.module('s3art', [
 	awsEndpoint: 'http://dl.fligl.io.s3.amazonaws.com'
 })
 
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
-	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false
-	});
+.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
 	
