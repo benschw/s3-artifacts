@@ -1,5 +1,9 @@
+<div class="pull-right">
+	<a href="https://github.com/benschw"><img class="svg-icon" src="/github.svg"/></a>
+</div>
+
 <ol class="breadcrumb">
-	<li><a href="#">Home</a></li>
+	<li><a ui-sref="home">Home</a></li>
 	<li class="active">{{project}}</li>
 </ol>
 
@@ -15,7 +19,7 @@
 		<tr ng-repeat="file in files">
 			<td>{{file.size}} B</td>
 			<td>{{file.lastModified}}</td>
-			<td><a href="{{file.url}}">{{file.key}}</a></td>
+			<td><a href="{{file.url}}">/{{file.key}}</a></td>
 		<tr>
 	</tbody
 </table>

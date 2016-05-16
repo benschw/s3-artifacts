@@ -18,11 +18,11 @@ angular.module('s3art', [
 	var home = {
 		name: 'home',
 		url: '/',
-		templateUrl: '/main.tpl.html',
+		templateUrl: '/home.tpl.html',
 		controller: 'HomeCtrl'
 	};
 	var project = {
-		name: 'about',
+		name: 'project',
 		url: '/:project',
 		templateUrl: '/project.tpl.html',
 		controller: 'ProjectCtrl'

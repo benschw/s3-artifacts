@@ -1,0 +1,21 @@
+<div class="pull-right">
+	<a href="https://github.com/benschw"><img class="svg-icon" src="/github.svg"/></a>
+</div>
+
+<ol class="breadcrumb">
+	<li class="active">Home</li>
+</ol>
+
+<table class="table table-striped">
+	<thead> 
+		<tr>
+			<th>Project</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="k in keys">
+			<td><a ui-sref="project({project: k})">{{k}}</a></td>
+		<tr>
+	</tbody
+</table>
+
