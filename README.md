@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/benschw/s3-artifacts.svg?branch=master)](https://travis-ci.org/benschw/s3-artifacts)
+
 idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://aws.amazon.com/code/Amazon-S3/1713)
 
 
