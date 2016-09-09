@@ -6,6 +6,7 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 ## Create a bucket
 - `dl.fligl.io`
 
+
 ## Edit Permissions
 
 - grant "List" to "Everyone"
@@ -42,3 +43,12 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 	</CORSConfiguration>
 
 - enable website hosting and set `index.html` as the index and error document
+
+
+## Add Web Assets
+
+- upload the contents of httpdocs to the bucket:
+
+<!-- br -->
+
+	aws s3 cp httpdocs s3://dl.fligl.io/ --recursive --sse¬
