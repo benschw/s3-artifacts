@@ -1,6 +1,12 @@
 [![Build Status](https://travis-ci.org/benschw/s3-artifacts.svg?branch=master)](https://travis-ci.org/benschw/s3-artifacts)
 
-idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://aws.amazon.com/code/Amazon-S3/1713)
+`s3-artifacts` is a static website that can be installed in your aws S3 bucket to
+list artifacts you publish to that same bucket in a user friendly UI.
+
+
+
+Take a look at it in action at [dl.fligl.io](http://dl.fligl.io/) and click through to one of the projects
+to see how to configure a TravisCI build to automatically publish to your bucket.
 
 
 ## Create a bucket
@@ -52,3 +58,8 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 <!-- br -->
 
 	aws s3 cp httpdocs s3://dl.fligl.io/ --recursive --sse
+
+
+
+
+_idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://aws.amazon.com/code/Amazon-S3/1713)_
