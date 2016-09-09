@@ -51,4 +51,4 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 
 <!-- br -->
 
-	aws s3 cp httpdocs s3://dl.fligl.io/ --recursive --sse¬
+	aws s3 cp httpdocs s3://dl.fligl.io/ --recursive --sse
