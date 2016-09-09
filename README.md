@@ -11,6 +11,8 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 - grant "List" to "Everyone"
 - edit bucket policy:
 
+<!-- br -->
+
 	{
 		"Version": "2008-10-17",
 		"Statement": [
@@ -27,6 +29,8 @@ idea/technique from [Francesco Pasqualini's s3 bucket listing (GPL v2)](https://
 	}
 
 - edit CORS configuration
+
+<!-- br -->
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
